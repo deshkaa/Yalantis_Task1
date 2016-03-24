@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">task1</string>
+    <string name="app_title">CE-1257218</string>
+
+    <string name="main_title">Комунальне господарство</string>
+    <string name="main_state">В роботі</string>
+
+    <string name="field_1">Створено</string>
+    <string name="field_2">Зареєстровано</string>
+    <string name="field_3">Вирішити до</string>
+    <string name="field_4">Відповідальний</string>
+
+    <string name="state_1">25 лютого 2016</string>
+    <string name="state_2">26 лютого 2016</string>
+    <string name="state_3">29 лютого 2016</string>
+    <string name="state_4">Дніпропетровський МВК()</string>
+
+    <string name="text">Відкритий люк (біля рекламного щита), район повороту 18 и 19 трамваїв на проспект Миру з Донецького шосе</string>
+
+</resources>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">task1</string>
+    <string name="app_title">CE-1257218</string>
+
+    <string name="main_title">Utilities</string>
+    <string name="main_state">In work</string>
+
+    <string name="field_1">Founded</string>
+    <string name="field_2">Registered</string>
+    <string name="field_3">To decide before</string>
+    <string name="field_4">Responsible</string>
+
+    <string name="state_1">February 25, 2016</string>
+    <string name="state_2">February 26, 2016</string>
+    <string name="state_3">February 29, 2016</string>
+    <string name="state_4">Dnipropetrovsk MVK()</string>
+
+    <string name="text">Open hatch (near the advertisment shield), the district where trams 18 and 19 turn to Myra av. from Donetskoe highway</string>
+
+</resources>
