@@ -12,10 +12,10 @@ import com.squareup.picasso.Picasso;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private String[] mDataset;
-    private View.OnClickListener onClickListener;
+    private View.OnClickListener onClickListener; //[Comment] Unused
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView mImageView;
+        public ImageView mImageView; //[Comment] Wrong visibility modifier
 
         public ViewHolder(View v) {
             super(v);
@@ -41,14 +41,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         Picasso.with(holder.mImageView.getContext()).
                 load(holder.mImageView.getContext().getResources().
-                        getIdentifier(mDataset[position], "drawable",
+                        getIdentifier(mDataset[position], "drawable", //[Comment] Hardcode. Anyway you can just use int array with ids
                                 holder.mImageView.getContext().getPackageName())).
                 into(holder.mImageView);
     }
 
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
-        super.onAttachedToRecyclerView(recyclerView);
+        super.onAttachedToRecyclerView(recyclerView); //[Comment] Unnecessary code
     }
 
     @Override

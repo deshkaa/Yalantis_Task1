@@ -139,4 +139,6 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <!-- [Comment] Please use dimens to support different screen sizes. Not layouts -->
 </LinearLayout>

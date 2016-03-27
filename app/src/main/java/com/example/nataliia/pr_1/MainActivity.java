@@ -11,7 +11,8 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.Toast;
 
-
+//[Comment] Wrong toolbar and status bar color
+//[Comment] Wrong paddings
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true); //[Comment] getSupportActionBar can be null
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,9 +46,10 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
 
-        String[] mDataset = new String[] {"img_1","img_2","img_3"};
+        String[] mDataset = new String[] {"img_1","img_2","img_3"}; //[Comment] Looks like hardcode
 
-        RecyclerView.Adapter mAdapter = new RecyclerViewAdapter(mDataset, onClickListener);
+        RecyclerView.Adapter mAdapter = new RecyclerViewAdapter(mDataset, onClickListener); //[Comment] use "m" prefix ONLY for private fields.
+        // Not for local variables
 
         LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(this);
         mLinearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
