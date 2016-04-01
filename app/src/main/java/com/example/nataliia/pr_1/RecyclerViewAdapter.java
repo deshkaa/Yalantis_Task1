@@ -11,11 +11,11 @@ import com.squareup.picasso.Picasso;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
-    private String[] mDataset;
+    private int[] mDataset;
     private View.OnClickListener onClickListener;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView mImageView;
+        private ImageView mImageView;
 
         public ViewHolder(View v) {
             super(v);
@@ -23,7 +23,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         }
     }
 
-    public RecyclerViewAdapter(String[] dataset, View.OnClickListener listener) {
+    public RecyclerViewAdapter(int[] dataset, View.OnClickListener listener) {
         mDataset = dataset;
         this.onClickListener = listener;
     }
@@ -38,17 +38,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-
-        Picasso.with(holder.mImageView.getContext()).
-                load(holder.mImageView.getContext().getResources().
-                        getIdentifier(mDataset[position], "drawable",
-                                holder.mImageView.getContext().getPackageName())).
-                into(holder.mImageView);
-    }
-
-    @Override
-    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
-        super.onAttachedToRecyclerView(recyclerView);
+        Picasso.with(holder.mImageView.getContext()).load(mDataset[position]).into(holder.mImageView);
+        holder.mImageView.setOnClickListener(onClickListener);
     }
 
     @Override
