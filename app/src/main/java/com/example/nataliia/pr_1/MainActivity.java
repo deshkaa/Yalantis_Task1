@@ -11,7 +11,6 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.Toast;
 
-
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +19,11 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,18 +43,18 @@ public class MainActivity extends AppCompatActivity {
 
         setAllControlsOnClick(R.id.linear_sub_layout, onClickListener);
 
-        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        mRecyclerView.setHasFixedSize(true);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
 
-        String[] mDataset = new String[] {"img_1","img_2","img_3"};
+        int[] dataset = new int[] {R.drawable.img_1,R.drawable.img_2,R.drawable.img_3};
 
-        RecyclerView.Adapter mAdapter = new RecyclerViewAdapter(mDataset, onClickListener);
+        RecyclerView.Adapter adapter = new RecyclerViewAdapter(dataset, onClickListener);
 
-        LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(this);
-        mLinearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
 
-        mRecyclerView.setLayoutManager(mLinearLayoutManager);
-        mRecyclerView.setAdapter(mAdapter);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(adapter);
     }
 
     private void setAllControlsOnClick(int id, View.OnClickListener onClickListener) {
