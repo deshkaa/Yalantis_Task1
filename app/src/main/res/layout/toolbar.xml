@@ -4,11 +4,13 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorWhite"
+    android:backgroundTint="@color/colorBlue"
+    android:tint="@color/colorWhite"
     android:minHeight="?attr/actionBarSize"
-
+    app:theme="@style/ToolbarTheme"
+    app:title="@string/app_title"
     app:contentInsetLeft="@dimen/contentInset"
     app:contentInsetStart="@dimen/contentInset"
-    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-    app:title="@string/app_title"
-    app:titleTextColor="@android:color/white" />
+    app:titleTextColor="@android:color/white"
+    />
